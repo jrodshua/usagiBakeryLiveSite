@@ -51,7 +51,7 @@ const Hero = () => {
     query {
       heroImg: file(relativePath: { eq: "usagi-hero.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1000, quality: 85) {
+          fluid(maxWidth: 1000, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

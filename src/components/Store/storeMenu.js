@@ -158,7 +158,7 @@ const StoreMenu = ({ edges }) => {
               ))}
               <div className="store-menu-text">
                 <span className="menu-text-title">{e.node.name}</span>
-                <span className="menu-text-description">from $30</span>
+                <span className="menu-text-description">{`from ${e.node.metadata.from}`}</span>
               </div>
             </Link>
           </StyledCard>

@@ -5,20 +5,22 @@ import FeaturedStore from "./featuredStore"
 const query = graphql`
   query FeaturedStoreQuery {
     featuredStoreQuery: allStripeProduct(
-      filter: { metadata: { featured: { eq: "true" } } }
+      filter: { active: { eq: true }, metadata: { featured: { eq: "true" } } }
     ) {
       edges {
         node {
           id
           localFiles {
             childImageSharp {
-              fluid(maxWidth: 360, quality: 80) {
+              fluid(maxWidth: 360, quality: 90) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           metadata {
+            featured
             slug
+            from
           }
           name
         }

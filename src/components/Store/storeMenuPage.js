@@ -4,7 +4,7 @@ import StoreMenu from "./storeMenu"
 
 const query = graphql`
   query StoreMenuQuery {
-    queryMenu: allStripeProduct {
+    queryMenu: allStripeProduct(filter: { active: { eq: true } }) {
       edges {
         node {
           description
@@ -12,13 +12,14 @@ const query = graphql`
           images
           localFiles {
             childImageSharp {
-              fluid(maxWidth: 1080, quality: 100) {
+              fluid(maxWidth: 1080, quality: 95) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           metadata {
             slug
+            from
           }
           name
         }

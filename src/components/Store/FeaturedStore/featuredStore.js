@@ -156,26 +156,27 @@ const FeaturedStore = ({ edges }) => {
         <span>Featured</span>
       </div>
       <div className="featured-store-container">
-        {edges.map(e => (
-          <StyledCard key={e.node.id + 222}>
-            <Link
-              to={`/store/${e.node.metadata.slug}/`}
-              className="featured-store-link"
-            >
-              {e.node.localFiles.map(i => (
-                <Img
-                  key={e.node.id + 234}
-                  fluid={i.childImageSharp.fluid}
-                  className="featured-store-img"
-                />
-              ))}
-              <div className="featured-store-text">
-                <span className="featured-store-title">{e.node.name}</span>
-                <span className="featured-store-body">from $30</span>
-              </div>
-            </Link>
-          </StyledCard>
-        ))}
+        {edges &&
+          edges.map(e => (
+            <StyledCard key={e.node.id + 222}>
+              <Link
+                to={`/store/${e.node.metadata.slug}/`}
+                className="featured-store-link"
+              >
+                {e.node.localFiles.map(i => (
+                  <Img
+                    key={e.node.id + 234}
+                    fluid={i.childImageSharp.fluid}
+                    className="featured-store-img"
+                  />
+                ))}
+                <div className="featured-store-text">
+                  <span className="featured-store-title">{e.node.name}</span>
+                  <span className="featured-store-body">{`from ${e.node.metadata.from}`}</span>
+                </div>
+              </Link>
+            </StyledCard>
+          ))}
       </div>
     </StyledWrapper>
   )

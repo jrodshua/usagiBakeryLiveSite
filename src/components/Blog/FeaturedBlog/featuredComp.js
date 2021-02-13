@@ -160,31 +160,32 @@ const StyledContainer = styled.div`
 const FeaturedComp = ({ post }) => {
   return (
     <StyledContainer>
-      {post.queryPost.edges.map(({ node: post }) => (
-        <div key={post.id} className="featComp-grid">
-          {post.mainImage.asset && post.mainImage.asset.fluid && (
-            <Img
-              fluid={post.mainImage.asset.fluid}
-              alt={post.mainImage.alt}
-              className="featComp-img"
-            />
-          )}
-          <div className="featComp-post-container">
-            <div className="featComp-post-content">
-              {post.title && (
-                <span>
-                  <b>Latest Post: </b>
-                  {post.title}
-                </span>
-              )}
-              {post.excerpt && <p>{post.excerpt}</p>}
-            </div>
-            <div className="featComp-post-link">
-              <Link to={`/blog/${post.slug.current}/`}>view post</Link>
+      {post &&
+        post.queryPost.edges.map(({ node: post }) => (
+          <div key={post.id} className="featComp-grid">
+            {post.mainImage.asset && post.mainImage.asset.fluid && (
+              <Img
+                fluid={post.mainImage.asset.fluid}
+                alt={post.mainImage.alt}
+                className="featComp-img"
+              />
+            )}
+            <div className="featComp-post-container">
+              <div className="featComp-post-content">
+                {post.title && (
+                  <span>
+                    <b>Latest Post: </b>
+                    {post.title}
+                  </span>
+                )}
+                {post.excerpt && <p>{post.excerpt}</p>}
+              </div>
+              <div className="featComp-post-link">
+                <Link to={`/blog/${post.slug.current}/`}>view post</Link>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
     </StyledContainer>
   )
 }

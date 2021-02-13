@@ -13,7 +13,10 @@ async function createBlogAndStorePages(graphql, actions) {
           }
         }
       }
-      allStripeProduct(sort: { order: DESC, fields: created }) {
+      allStripeProduct(
+        filter: { active: { eq: true } }
+        sort: { order: DESC, fields: created }
+      ) {
         edges {
           node {
             id
