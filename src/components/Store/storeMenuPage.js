@@ -4,7 +4,10 @@ import StoreMenu from "./storeMenu"
 
 const query = graphql`
   query StoreMenuQuery {
-    queryMenu: allStripeProduct(filter: { active: { eq: true } }) {
+    queryMenu: allStripeProduct(
+      filter: { active: { eq: true } }
+      sort: { order: DESC, fields: created }
+    ) {
       edges {
         node {
           description
