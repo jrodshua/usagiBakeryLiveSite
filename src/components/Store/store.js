@@ -166,6 +166,8 @@ const StyledContainer = styled.div`
     button {
       border: none;
       margin: 0.5rem;
+      background: #fff;
+      color: #262526;
     }
     p {
       position: relative;
@@ -251,8 +253,6 @@ const StyledContainer = styled.div`
         showCart ? "translateY(0)" : "translateY(-100%)"};
       height: 90px;
       top: 0;
-      button {
-      }
       p {
         margin: 0;
       }
