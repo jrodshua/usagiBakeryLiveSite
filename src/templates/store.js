@@ -17,6 +17,10 @@ export const query = graphql`
             name
             id
             description
+            metadata {
+              lrg
+              reg
+            }
             localFiles {
               childImageSharp {
                 fluid(maxWidth: 1080, quality: 95) {

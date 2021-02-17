@@ -46,6 +46,7 @@ const addProduct = cartObject => {
     name: cartObject.name,
     description: cartObject.description,
     quantity: cartObject.quantity,
+    units: cartObject.units,
   }
 }
 

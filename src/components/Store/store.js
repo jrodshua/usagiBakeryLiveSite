@@ -60,6 +60,11 @@ const StyledContainer = styled.div`
       text-transform: lowercase;
       font-weight: bold;
     }
+    span {
+      font-weight: 400;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
   }
   .qty {
     display: flex;
@@ -277,6 +282,7 @@ const Store = ({ edges }) => {
         image: e.node.product.localFiles.map(i => i.childImageSharp.fluid),
         name: e.node.product.name,
         description: e.node.product.description,
+        units: e.node.product.metadata.reg || "none",
       })
     })
 
@@ -293,6 +299,7 @@ const Store = ({ edges }) => {
         image: e.node.product.localFiles.map(i => i.childImageSharp.fluid),
         name: e.node.product.name,
         description: e.node.product.description,
+        units: e.node.product.metadata.lrg,
       })
     })
 
@@ -309,6 +316,7 @@ const Store = ({ edges }) => {
           name: obj.name,
           description: obj.description,
           quantity: qty,
+          units: obj.units,
         },
       },
     })
@@ -338,11 +346,20 @@ const Store = ({ edges }) => {
             <div className="store-details-div">
               <div className="product-name-price">
                 <h1>{regObj.name}</h1>
-                <p>
-                  {size === "regular"
+
+                {!largeObj ? (
+                  <p>
+                    {`Total: ${formatPrice(regObj.price * qty)} `}
+                    <span>{`(${formatPrice(regObj.price)} each)`}</span>
+                  </p>
+                ) : size === "regular" ? (
+                  <p>{formatPrice(regObj.price * qty)}</p>
+                ) : (
+                  <p>{formatPrice(largeObj.price * qty)}</p>
+                )}
+                {/* {size === "regular"
                     ? formatPrice(regObj.price * qty)
-                    : formatPrice(largeObj.price * qty)}
-                </p>
+                    : formatPrice(largeObj.price * qty)} */}
               </div>
               <div className="qty">
                 <p>QTY</p>
@@ -352,34 +369,27 @@ const Store = ({ edges }) => {
                   <button onClick={() => setQty(qty + 1)}>&#x2b;</button>
                 </div>
               </div>
-              <div className="size-container">
-                <p>SIZE</p>
-                {!largeObj ? (
+              {!largeObj ? (
+                <></>
+              ) : (
+                <div className="size-container">
+                  <p>SIZE</p>
                   <div className="size-button">
                     <button
                       onClick={() => setSize("regular")}
                       className="size-regular"
                     >
-                      Regular
-                    </button>
-                  </div>
-                ) : (
-                  <div className="size-button">
-                    <button
-                      onClick={() => setSize("regular")}
-                      className="size-regular"
-                    >
-                      5 INCH
+                      {regObj.units}
                     </button>
                     <button
                       onClick={() => setSize("large")}
                       className="size-large"
                     >
-                      8 INCH
+                      {largeObj.units}
                     </button>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
               <div className="product-description">
                 <p>{regObj.description}</p>
               </div>

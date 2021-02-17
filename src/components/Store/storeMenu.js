@@ -73,40 +73,62 @@ const StyledWrapper = styled.div`
 const StyledCard = styled.div`
   width: 48%;
   background: #fff;
-  padding-bottom: 0.25rem;
   margin: 0 0.1rem 0.5rem 0.1rem;
   border-radius: 4px;
   box-shadow: 0.5px 0.75px 3px 0px rgba(0, 0, 0, 0.3);
 
-  &:hover {
-    background: #262526;
-    border: 1px solid #262526;
-    color: #fff;
-  }
   .store-menu-link {
     cursor: pointer;
   }
   .store-menu-img {
     width: 100%;
-    height: auto;
+    height: 114px;
     border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #afb2b7;
   }
   .store-menu-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    min-height: 82px;
+    padding: 0.25rem 0;
   }
   .menu-text-title {
     font-size: 1rem;
-    width: 80%;
-    margin: 0 auto;
+    ${"" /* width: 80%; */}
+    margin: 0;
     text-align: center;
+    display: block;
+    width: 100%;
   }
   .menu-text-description {
     font-size: 0.8rem;
-    width: 95%;
-    margin: auto;
+    ${"" /* width: 95%; */}
+    ${"" /* margin: auto; */}
     text-align: center;
-    margin-top: 0.5rem;
+    ${"" /* margin-top: 0.5rem; */}
+    display: block;
+    width: 100%;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: #262526;
+      border: 1px solid #262526;
+      color: #fff;
+    }
+  }
+
+  @media (min-width: 405px) {
+    .store-menu-img {
+      height: 200px;
+    }
+  }
+
+  @media (min-width: 680px) {
+    .store-menu-img {
+      height: 260px;
+    }
   }
 
   @media (min-width: 950px) {

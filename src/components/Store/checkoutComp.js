@@ -291,7 +291,15 @@ const CheckoutComp = () => {
                     className="checkoutCart-row-img"
                   />
                   <div className="checkoutCart-details">
-                    <h3>{c.name}</h3>
+                    {/* <h3>{c.name}</h3> */}
+                    {c.units === "none" ? (
+                      <h3>{c.name}</h3>
+                    ) : (
+                      <span>
+                        <h3>{c.name}</h3>
+                        {c.units}
+                      </span>
+                    )}
                     <p>{formatPrice(c.price * c.quantity, c.currency)}</p>
                     <div className="checkoutCart-details-bottom">
                       <button
