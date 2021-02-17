@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledWrapper = styled.main`
-  padding-bottom: 0.25rem;
+  padding-bottom: 4.75rem;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
