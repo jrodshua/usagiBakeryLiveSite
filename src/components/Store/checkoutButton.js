@@ -65,7 +65,7 @@ const CheckoutButton = () => {
   const handleSubmit = async event => {
     event.preventDefault()
     const form = event.target
-    const formResults = await fetch("/", {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
@@ -102,11 +102,12 @@ const CheckoutButton = () => {
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
-        <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="order-details" />
+        <input type="hidden" name="bot-field" />
         <p>
           <label>
-            Please let us know when you'd like your order!{" "}
+            *Please include your name and/or email* and let us know when you'd
+            like your order!{" "}
             <textarea
               name="message"
               onChange={handleChange}
