@@ -18,7 +18,7 @@ const StyledWrapper = styled.main`
 const faqArr = [
   {
     title: `Are your products vegan?`,
-    body: `Yes! usagi. bakery is a 100% vegan operation, baked by a vegan, for vegans. However, please note that we do operate out of a communal kitchen, where equipment shared sometimes uses dairy and egg products.`,
+    body: `Yes! usagi. bakery is a 100% vegan operation, baked by a vegan, for vegans.`,
     id: 1,
   },
   {

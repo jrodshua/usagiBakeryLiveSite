@@ -13,13 +13,12 @@ const StyledContainer = styled.div`
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   h2 {
-    width: 75%;
-    max-width: 10ch;
+    max-width: 15ch;
     margin: 0 auto;
     text-align: center;
     color: #262526;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 400;
     line-height: 2.5rem;
     letter-spacing: 2px;
@@ -43,10 +42,11 @@ const StyledContainer = styled.div`
     }
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 680px) {
     h2 {
-      font-size: 2.25rem;
-      line-height: 2.75rem;
+      font-size: 2.5rem;
+      max-width: 14ch;
+      line-height: 3.2rem;
     }
     .product-collection-link {
     }
@@ -78,7 +78,7 @@ const ProdCollection = () => {
   return (
     <>
       <StyledContainer>
-        <h2>Vegan, Sustainable, and Ethically baked</h2>
+        <h2>vegan cakes & pastries, ethically & sustainably baked</h2>
         <Link to="/store/" className="product-collection-link">
           <p>Order Now</p>
         </Link>

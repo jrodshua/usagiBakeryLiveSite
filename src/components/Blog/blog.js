@@ -22,7 +22,7 @@ const StyledContainer = styled.article`
     line-height: 2rem;
   }
   a {
-    color: blue;
+    color: #012e4f;
     text-decoration: underline;
   }
   .post-meta {
@@ -46,6 +46,15 @@ const StyledContainer = styled.article`
   .projectComp-img {
     max-width: 80%;
     margin: 2rem auto;
+  }
+  ul {
+    max-width: 1500px;
+    width: 75%;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+  }
+  li {
+    padding: 0.25rem 0;
   }
 `
 

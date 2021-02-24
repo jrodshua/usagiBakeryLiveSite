@@ -13,7 +13,7 @@ const StyledWrapper = styled.div`
     margin: 0 auto;
     font-size: 0.9rem;
     background: #fff;
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 3px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     h2 {
@@ -29,6 +29,16 @@ const StyledWrapper = styled.div`
       font-size: 0.8rem;
       width: 95%;
       margin: 0 auto;
+    }
+    .notice-bold {
+      text-align: left;
+      display: block;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .menu-email-link {
+      color: #012e4f;
+      text-decoration: underline;
     }
   }
 
@@ -58,9 +68,12 @@ const StyledWrapper = styled.div`
       }
       p {
         font-size: 1rem;
-        line-height: 2.5rem;
+        line-height: 2.2rem;
         max-width: 80ch;
         margin: 0 auto;
+      }
+      .notice-bold {
+        text-align: center;
       }
     }
     .store-menu-container {
@@ -95,7 +108,6 @@ const StyledCard = styled.div`
   }
   .menu-text-title {
     font-size: 1rem;
-    ${"" /* width: 80%; */}
     margin: 0;
     text-align: center;
     display: block;
@@ -103,10 +115,7 @@ const StyledCard = styled.div`
   }
   .menu-text-description {
     font-size: 0.8rem;
-    ${"" /* width: 95%; */}
-    ${"" /* margin: auto; */}
     text-align: center;
-    ${"" /* margin-top: 0.5rem; */}
     display: block;
     width: 100%;
   }
@@ -157,11 +166,22 @@ const StoreMenu = ({ edges }) => {
       <div className="store-menu-header">
         <h2>order notice:</h2>
         <p>
-          Most orders received before 5pm, will be available in 1-2 days. Large
-          orders (5 or more items) may take to 1-4 days to be completed. If you
-          have any concerns regarding arrival time or general questions, please
-          reach out at <b>bunny.veganbakedgoods@gmail.com</b> before placing
-          your order.
+          Please let us know when you would like your order @ checkout. Most
+          orders will be available in 1-2 days. Large orders (such as a few
+          dozen of something) and custom cakes will take about 2-4 days. Please
+          order any cakes well in advance to ensure the best quality & care in
+          their crafting.
+          <br />
+          <br />
+          <span className="notice-bold">*before placing your order*</span>
+          If you have any concerns regarding arrival time or general questions,
+          please reach out at our email:{" "}
+          <a
+            href="mailto:bunny.veganbakedgoods@gmail.com"
+            className="menu-email-link"
+          >
+            bunny.veganbakedgoods@gmail.com
+          </a>
         </p>
       </div>
       <div className="store-menu-container">
