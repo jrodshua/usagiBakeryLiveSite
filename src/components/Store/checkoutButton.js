@@ -51,7 +51,6 @@ const CheckoutButton = () => {
   const checkoutBag = useStateContext()
 
   const handleSubmit = async event => {
-    event.preventDefault()
     let stripeItems = checkoutBag.map(i => {
       return { price: i.id, quantity: i.quantity }
     })
@@ -65,7 +64,7 @@ const CheckoutButton = () => {
     })
 
     if (error) {
-      console.warn("Error: ", error)
+      console.error("Error: ", error)
     }
   }
 
@@ -74,9 +73,8 @@ const CheckoutButton = () => {
       <form
         name="order-details"
         method="POST"
-        netlify-honeypot="bot-field"
+        data-netlify-honeypot="bot-field"
         data-netlify="true"
-        onSubmit={handleSubmit}
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="order-details" />
@@ -89,7 +87,9 @@ const CheckoutButton = () => {
             ></textarea>
           </label>
         </p>
-        <button type="submit">checkout</button>
+        <button type="submit" onClick={handleSubmit}>
+          checkout
+        </button>
       </form>
     </StyledContainer>
   )
