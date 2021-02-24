@@ -51,6 +51,7 @@ const CheckoutButton = () => {
   const checkoutBag = useStateContext()
 
   const handleSubmit = async event => {
+    event.preventDefault()
     let stripeItems = checkoutBag.map(i => {
       return { price: i.id, quantity: i.quantity }
     })
