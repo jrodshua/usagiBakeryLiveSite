@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import getStripe from "../../utils/stripe"
 import { useStateContext } from "../../context/storeProvider"
 import styled from "styled-components"
@@ -47,11 +47,35 @@ const StyledContainer = styled.div`
   }
 `
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const CheckoutButton = () => {
+  const [state, setState] = useState({})
+
   const checkoutBag = useStateContext()
+
+  const handleChange = event => {
+    setState({ ...state, [event.target.name]: event.target.value })
+  }
 
   const handleSubmit = async event => {
     event.preventDefault()
+    const form = event.target
+    const formResults = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch(error => alert(error))
+
     let stripeItems = checkoutBag.map(i => {
       return { price: i.id, quantity: i.quantity }
     })
@@ -73,9 +97,10 @@ const CheckoutButton = () => {
     <StyledContainer>
       <form
         name="order-details"
-        method="POST"
-        data-netlify-honeypot="bot-field"
+        method="post"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="order-details" />
@@ -84,13 +109,12 @@ const CheckoutButton = () => {
             Please let us know when you'd like your order!{" "}
             <textarea
               name="message"
+              onChange={handleChange}
               placeholder="or let us know if you have any questions or special requests for your order..."
             ></textarea>
           </label>
         </p>
-        <button type="submit" onClick={handleSubmit}>
-          checkout
-        </button>
+        <button type="submit">checkout</button>
       </form>
     </StyledContainer>
   )

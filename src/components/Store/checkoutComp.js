@@ -228,6 +228,9 @@ const StyledCheckoutDisplay = styled.div`
     line-height: 3.5rem;
     text-align: center;
   }
+  .hide-checkout-button {
+    visibility: hidden;
+  }
 `
 
 const CheckoutComp = () => {
@@ -253,6 +256,9 @@ const CheckoutComp = () => {
     checkoutDisplay = (
       <StyledCheckoutDisplay>
         <h3>Your cart is currently empty...</h3>
+        <div className="hide-checkout-button">
+          <CheckoutButton />
+        </div>
       </StyledCheckoutDisplay>
     )
   }
