@@ -34,18 +34,17 @@ const StyledContainer = styled.div`
       font-size: 0.85rem;
     }
   }
-`
-
-const StyledButton = styled.button`
-  background: #262526;
-  color: #fff;
-  width: 95%;
-  display: block;
-  margin: 0 auto;
-  padding: 1rem 0;
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  button {
+    background: #262526;
+    color: #fff;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
 `
 
 const CheckoutButton = () => {
@@ -90,7 +89,7 @@ const CheckoutButton = () => {
             ></textarea>
           </label>
         </p>
-        <StyledButton type="submit">checkout</StyledButton>
+        <button type="submit">checkout</button>
       </form>
     </StyledContainer>
   )
