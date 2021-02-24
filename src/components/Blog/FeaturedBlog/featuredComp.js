@@ -140,7 +140,7 @@ const StyledContainer = styled.div`
   }
 
   @media (min-width: 950px) {
-    height: 420px;
+    height: auto;
     max-width: 1200px;
     .featComp-post-container {
     }

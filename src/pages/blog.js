@@ -36,10 +36,10 @@ const StyledContainer = styled.div`
     grid-row-gap: 0px;
     .post-container {
       overflow: scroll;
-      height: 430px;
+      height: 560px;
     }
     .post-container-img {
-      max-height: 200px;
+      height: 240px;
     }
   }
 
@@ -52,7 +52,7 @@ const StyledContainer = styled.div`
     grid-column-gap: 4px;
     grid-row-gap: 8px;
     .post-container {
-      height: 480px;
+      height: 580px;
       width: 100%;
       margin: 0;
     }
@@ -101,7 +101,7 @@ export const query = graphql`
           id
           title
           excerpt
-          publishedAt(formatString: "MMMM DD, YY")
+          publishedAt(formatString: "MMMM DD, YYYY")
           slug {
             current
           }
