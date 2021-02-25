@@ -27,7 +27,7 @@ const StyledGrid = styled.div`
     padding: 0.5rem 0;
     width: 95%;
     margin: 0 auto;
-    border-radius: 6px;
+    border-radius: 3px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
   .checkout-header-row {
@@ -57,7 +57,7 @@ const StyledGrid = styled.div`
     background: #fff;
     width: 95%;
     margin: 0.5rem auto 0.7rem auto;
-    border-radius: 6px;
+    border-radius: 3px;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.19);
   }
   .checkoutCart-row-img {
@@ -118,8 +118,8 @@ const StyledGrid = styled.div`
 
   .checkout-total-card {
     width: 95%;
-    border-radius: 6px;
-    margin: 0 auto 0.7rem auto;
+    border-radius: 3px;
+    margin: 0 auto 0.5rem auto;
     text-align: center;
     background: #fff;
     padding: 1rem 0;
@@ -172,15 +172,15 @@ const StyledGrid = styled.div`
       }
     }
     .checkout-header-description {
-      font-size: 1.4rem;
-      line-height: 2.2rem;
+      font-size: 1rem;
+      line-height: 2rem;
       text-align: center;
       padding: 0.5rem 0;
     }
     .checkoutCart-grid {
       background: #fff;
       width: 95%;
-      margin: 1rem auto 1rem auto;
+      margin: 0.5rem auto;
       padding: 0.5rem 0;
       border-radius: 3px;
     }
@@ -217,7 +217,7 @@ const StyledGrid = styled.div`
 const StyledCheckoutDisplay = styled.div`
   width: 95%;
   margin: 2rem auto 0.5rem auto;
-  border-radius: 6px;
+  border-radius: 3px;
   color: #262526;
   h3 {
     font-family: "Sacramento", cursive;
