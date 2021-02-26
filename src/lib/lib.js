@@ -19,6 +19,3 @@ export const formatPrice = amount => {
   })
   return numberFormat.format(price)
 }
-
-export const igUrl = userId =>
-  `https://instagram.com/graphql/query/?query_id=17888483320059182&variables={"id":"${userId}","first":${12},"after":null}`
