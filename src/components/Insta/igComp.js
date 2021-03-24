@@ -31,43 +31,6 @@ const StyledContainer = styled.div`
     display: none;
   }
 
-  .igGrid-one {
-    width: 95%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 4px;
-    grid-row-gap: 4px;
-  }
-  .igGrid-two {
-    display: none;
-  }
-  .igComp-grid {
-    width: 100%;
-    line-height: 0;
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-    }
-  }
-
-  @media (min-width: 760px) {
-    .igGrid-two {
-      width: 95%;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gird-template-rows: repeat(4, 1fr);
-      grid-column-gap: 4px;
-      grid-row-gap: 4px;
-    }
-    .igGrid-one {
-      display: none;
-    }
-  }
-
   @media (min-width: 950px) {
     max-width: 1200px;
     width: 95%;
@@ -91,26 +54,11 @@ const StyledContainer = styled.div`
       letter-spacing: 1.5px;
       padding-top: 3px;
     }
-    .igGrid-two {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .igComp-grid {
-      width: 24.6%;
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: 3px;
-      }
-    }
   }
 `
 
-const IgComp = ({ posts }) => {
+const IgComp = () => {
   const { instagram } = iconPaths
-  const postsSlice = posts.slice(0, 8)
 
   return (
     <>
@@ -129,40 +77,6 @@ const IgComp = ({ posts }) => {
           </svg>
           <p>@usagi.bakery</p>
         </a>
-        <div className="igGrid-one">
-          {postsSlice.map(p => {
-            return (
-              <div key={p.id} className="igComp-grid">
-                <a
-                  href={`https://www.instagram.com/p/${p.url}/`}
-                  target="_blank"
-                  aria-label="Link to instagram post"
-                  className="igComp-link"
-                  rel="noopener noreferrer"
-                >
-                  <img src={p.src} alt={p.caption} className="igComp-img" />
-                </a>
-              </div>
-            )
-          })}
-        </div>
-        <div className="igGrid-two">
-          {posts.map(p => {
-            return (
-              <div key={p.id + 654} className="igComp-grid">
-                <a
-                  href={`https://www.instagram.com/p/${p.url}/`}
-                  target="_blank"
-                  aria-label="Link to instagram post"
-                  className="igComp-link"
-                  rel="noopener noreferrer"
-                >
-                  <img src={p.src} alt={p.caption} className="igComp-img" />
-                </a>
-              </div>
-            )
-          })}
-        </div>
       </StyledContainer>
     </>
   )
