@@ -52,13 +52,13 @@ const faqArr = [
     id: 7,
   },
   {
-    title: `Address of communal kitchen...`,
-    body: `COMING SOON!`,
+    title: `How do I get my order?`,
+    body: `Orders are available to be picked up at our cottage food operation located in Southwest Las Vegas, and the address will be provided the day before order pick up. Alternatively, we can meet you at a location of your choice. Delivery is also available ($5 to $15 delivery fee may apply, depending on your location).`,
     id: 8,
   },
   {
-    title: `Farmer's Market?`,
-    body: `Stay tuned for updates! We're planning to have a farmer’s market stand (or two) in the future, where you will be able to pick up pre-orders, or select from the baked goods we will have available there.`,
+    title: `Are you at the Farmer's Market? Do you have any pop-ups planned?`,
+    body: `Stay tuned for updates on our Instagram! We're planning to have a Farmer’s Market stand (or two) in the future, where you will be able to pick up pre-orders, or select from the baked goods we will have available there.`,
     id: 9,
   },
 ]

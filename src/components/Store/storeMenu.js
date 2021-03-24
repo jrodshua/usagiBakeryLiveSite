@@ -30,15 +30,12 @@ const StyledWrapper = styled.div`
       width: 95%;
       margin: 0 auto;
     }
-    .notice-bold {
-      text-align: left;
-      display: block;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
     .menu-email-link {
-      color: #012e4f;
+      color: #000000;
       text-decoration: underline;
+      :hover {
+        color: #262526;
+      }
     }
   }
 
@@ -72,9 +69,6 @@ const StyledWrapper = styled.div`
         max-width: 80ch;
         margin: 0 auto;
       }
-      .notice-bold {
-        text-align: center;
-      }
     }
     .store-menu-container {
       max-width: 900px;
@@ -95,7 +89,7 @@ const StyledCard = styled.div`
   }
   .store-menu-img {
     width: 100%;
-    height: 114px;
+    height: 190px;
     border-radius: 4px 4px 0 0;
     border-bottom: 1px solid #afb2b7;
   }
@@ -166,16 +160,14 @@ const StoreMenu = ({ edges }) => {
       <div className="store-menu-header">
         <h2>order notice:</h2>
         <p>
-          Please let us know when you would like your order @ checkout. Most
+          Please let us know when you would like your order at checkout. Most
           orders will be available in 1-2 days. Large orders (such as a few
           dozen of something) and custom cakes will take about 2-4 days. Please
-          order any cakes well in advance to ensure the best quality & care in
+          order any cakes well in advance to ensure the best quality and care in
           their crafting.
           <br />
-          <br />
-          <span className="notice-bold">*before placing your order*</span>
-          If you have any concerns regarding arrival time or general questions,
-          please reach out at our email:{" "}
+          For general questions, custom cakes, or concerns regarding arrival
+          time, please reach out at our email:{" "}
           <a
             href="mailto:bunny.veganbakedgoods@gmail.com"
             className="menu-email-link"

@@ -36,7 +36,10 @@ const StyledWrapper = styled.div`
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.11), 0 3px 6px rgba(0, 0, 0, 0.14);
     h2 {
       padding: 0.2rem 0;
-      font-size: 1.3rem;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-family: "Sacramento", cursive;
       text-transform: lowercase;
     }
     p {
