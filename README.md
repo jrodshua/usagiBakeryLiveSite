@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.usagibakery.com/">
-    <img alt="UsagiBakery" src="./src/images/logo.png" width="200" />
+    <img alt="UsagiBakery" src="./svg/github-logo.svg" width="200" />
   </a>
 </p>
 <h1 align="center">
