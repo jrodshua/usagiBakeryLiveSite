@@ -175,6 +175,7 @@ const CheckoutButton = () => {
                 name="name"
                 onChange={handleChange}
                 placeholder="enter your name"
+                required
               />
             </label>
           </p>
@@ -186,6 +187,7 @@ const CheckoutButton = () => {
                 name="email"
                 onChange={handleChange}
                 placeholder="enter your email"
+                required
               />
             </label>
           </p>
@@ -195,6 +197,7 @@ const CheckoutButton = () => {
             name="message"
             onChange={handleChange}
             placeholder="or let us know if you have any questions or special requests for your order..."
+            required
           ></textarea>
         </p>
         <button type="submit">checkout</button>
