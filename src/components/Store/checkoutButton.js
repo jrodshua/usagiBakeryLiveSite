@@ -7,7 +7,7 @@ const StyledContainer = styled.div`
   form {
     width: 95%;
     margin: 0.5rem auto;
-    height: 300px;
+    height: 240px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -166,37 +166,11 @@ const CheckoutButton = () => {
           Please let us know when you'd like your order or if you have any
           questions!
         </span>
-        <div className="checkout-form-nameEmail-div">
-          <p className="checkout-form-nameEmail">
-            <label>
-              <span>name:</span>
-              <input
-                type="text"
-                name="name"
-                onChange={handleChange}
-                placeholder="enter your name"
-                required
-              />
-            </label>
-          </p>
-          <p className="checkout-form-nameEmail">
-            <label>
-              <span>email:</span>
-              <input
-                type="email"
-                name="email"
-                onChange={handleChange}
-                placeholder="enter your email"
-                required
-              />
-            </label>
-          </p>
-        </div>
         <p className="checkout-form-textArea">
           <textarea
             name="message"
             onChange={handleChange}
-            placeholder="or let us know if you have any questions or special requests for your order..."
+            placeholder="Please provide your email or phone number and we'll reach out to you soon!"
             required
           ></textarea>
         </p>
